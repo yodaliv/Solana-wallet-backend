@@ -1,0 +1,41 @@
+{
+  "name": "nodejs-express-mysql",
+  "version": "1.0.0",
+  "description": "Node.js Restful CRUD API with Node.js, Express and MySQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*",
+      "docs/*"
+    ],
+    "delay": 2500
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql",
+    "restapi"
+  ],
+  "author": "bezkoder",
+  "license": "ISC",
+  "dependencies": {
+    "@nfteyez/sol-rayz": "^0.9.1",
+    "@solana/spl-token": "^0.1.8",
+    "@solana/wallet-adapter-base": "^0.9.3",
+    "@solana/web3.js": "^1.32.0",
+    "bs58": "^4.0.1",
+    "coinbase-commerce-node": "^1.0.4",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "ethereumjs-tx": "^2.1.2",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "nodemon": "^2.0.15",
+    "tweetnacl": "^1.0.3",
+    "web3": "^1.7.0"
+  }
+}
