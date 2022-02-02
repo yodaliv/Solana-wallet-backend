@@ -16,7 +16,6 @@ exports.Verify = (req, res) => {
   const publicKey = base58.decode(req.body.publicKey);
   //is received from the client signature and publicKey
   const rdMsg = Object.keys(req.body.randomMessage).map(key => req.body.randomMessage[key]);
-  
   if(nacl.sign.detached.verify(Uint8Array.from(rdMsg), Uint8Array.from(req.body.signature.data), publicKey))
   {
     (async () => {
@@ -24,9 +23,9 @@ exports.Verify = (req, res) => {
         publicAddress: publicKey,
         serialization: true,
       });
+      
       if(nfts.length) {
           nfts.map((nftData) => {
-            console.log(nftData);
               if(nftData.updateAuthority === config.CREATOR_WALLET_ADDRESS) {
                   res.send({result: 'true'});
               }else{
@@ -38,6 +37,6 @@ exports.Verify = (req, res) => {
   }
   else
   {
-    res.send({result: 'false'});
+    res.send({result: 'verify is failed'});
   }
 }

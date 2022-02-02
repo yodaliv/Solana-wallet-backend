@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser"); /* deprecated */
 const cors = require("cors");
+const path = require('path');
 
 const app = express();
 app.use(cors());
@@ -20,11 +21,11 @@ app.use(function(req, res, next) {
 
   next();
 });
-
+app.use(express.static(path.resolve(__dirname, './public/')));
 // simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "Welcome to bezkoder application." });
+// });
 
 require("./app/routes/routes.js")(app);
 
