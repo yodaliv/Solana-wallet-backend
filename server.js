@@ -21,6 +21,7 @@ app.use(function(req, res, next) {
 
   next();
 });
+
 app.use(express.static(path.resolve(__dirname, './public/')));
 // simple route
 // app.get("/", (req, res) => {
